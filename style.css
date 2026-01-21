@@ -6,17 +6,24 @@
     font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-body { background-color: #f4f4f4; }
+body { 
+    /* Degradê moderno do azul para o marinho */
+    background: linear-gradient(135deg, #003cff 0%, #001e80 100%);
+    background-attachment: fixed;
+    color: #333; 
+    min-height: 100vh;
+}
 
 /* Cabeçalho */
 .header {
     background-color: #FFD700;
     padding: 30px 15px;
     text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .logo img {
-    max-width: 260px;
+    max-width: 240px;
     height: auto;
     margin: 0 auto 15px;
     display: block;
@@ -30,151 +37,148 @@ body { background-color: #f4f4f4; }
     border-radius: 50px;
     font-size: 0.85rem;
     font-weight: bold;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* Barra de Anúncio */
-.announcement-bar {
-    background-color: #fff;
-    padding: 12px 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-.announcement-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.8rem;
-}
-
-.badge {
-    background-color: #28a745;
-    color: white;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-weight: bold;
-}
-
-/* Meio Azul - Preços */
+/* Container de Preços */
 .pricing-container {
-    background-color: #0047AB;
-    color: white;
-    padding: 40px 15px;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
     text-align: center;
 }
 
 .pricing-title {
-    margin-bottom: 30px;
-    font-size: 1.8rem;
+    margin-bottom: 40px;
+    color: #fff; /* Branco para contrastar com o fundo azul */
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .cards-wrapper {
     display: flex;
-    justify-content: center;
-    gap: 20px;
     flex-wrap: wrap;
-    max-width: 1100px;
-    margin: 0 auto;
+    justify-content: center;
+    gap: 25px;
 }
 
+/* Estilização dos Cards */
 .card {
-    background: white;
-    color: #333;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 20px;
     padding: 30px;
-    border-radius: 15px;
-    width: 100%; /* No mobile ocupa tudo */
-    max-width: 320px; /* No desktop limita o tamanho */
-    position: relative;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    width: 260px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.3);
 }
 
-.featured {
-    border: 3px solid #FFD700;
-    transform: scale(1); /* Resetamos o scale para não quebrar no mobile */
+.card:hover { 
+    transform: translateY(-10px); 
+    background: #fff;
 }
 
-.ribbon {
-    position: absolute;
-    top: -10px;
-    right: 15px;
-    background: #ff4757;
-    color: white;
-    padding: 4px 10px;
-    font-size: 0.7rem;
-    font-weight: bold;
-    border-radius: 4px;
+.card h3 {
+    background: #0047AB;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
 }
 
 .price {
-    font-size: 2.5rem;
-    font-weight: bold;
+    font-size: 2.2rem;
+    font-weight: 800;
     color: #0047AB;
-    margin: 15px 0;
+    margin: 20px 0;
 }
+
+.price span { font-size: 1rem; color: #777; }
 
 ul {
     list-style: none;
     text-align: left;
     margin-bottom: 25px;
-    font-size: 0.9rem;
 }
 
-ul li { margin-bottom: 8px; }
-ul li::before { content: "✓ "; color: #28a745; font-weight: bold; }
-
-.obs {
-    color: #d9534f !important;
-    font-size: 0.75rem;
-    font-weight: bold;
-    margin-top: 10px;
+ul li { 
+    margin-bottom: 12px; 
+    font-size: 0.95rem;
+    color: #555;
 }
-.obs::before { content: "" !important; }
 
-/* Botão Eu Quero */
+ul li::before { 
+    content: "✓ "; 
+    color: #28a745; 
+    font-weight: bold; 
+}
+
 .btn-buy {
     background-color: #FFD700;
     color: #000;
     text-decoration: none;
     display: block;
-    padding: 15px;
-    border-radius: 8px;
+    padding: 14px;
+    border-radius: 10px;
     font-weight: bold;
     transition: 0.3s;
+    box-shadow: 0 4px 0 #b39700;
+}
+
+.btn-buy:hover { 
+    background-color: #ffea00; 
+    transform: scale(1.05);
+}
+
+/* LEGENDA ESTRATÉGICA E ATRATIVA */
+.legenda-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.legenda-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px); /* Efeito de vidro */
+}
+
+.legenda-box i { 
+    color: #FFD700; 
+    font-size: 1.3rem; 
+}
+
+.legenda-box span { 
+    font-size: 0.95rem; 
+    color: #fff; /* Texto branco sobre o fundo azul */
 }
 
 /* Rodapé */
 .footer {
-    background-color: #1a1a1a;
+    background-color: #0c0c0c;
     color: #fff;
-    padding: 30px 15px;
+    padding: 40px 20px;
     text-align: center;
-    font-size: 0.9rem;
 }
 
-.copyright {
-    font-size: 0.75rem;
-    margin-top: 15px;
-    color: #777;
-}
+.contact-info p { margin-bottom: 8px; font-size: 0.9rem; }
+.copyright { font-size: 0.8rem; color: #666; margin-top: 20px; }
 
-/* --- REGRAS PARA CELULAR (MOBILE) --- */
-@media (max-width: 768px) {
-    .pricing-title { font-size: 1.5rem; }
-    
-    .featured {
-        transform: scale(1); /* Remove o destaque de tamanho no mobile para não cortar */
-        margin: 10px 0;
-    }
-
-    .announcement-content {
-        flex-direction: column; /* Badge em cima do texto no celular */
+/* Mobile */
+@media (max-width: 600px) {
+    .legenda-box {
+        flex-direction: column;
+        border-radius: 15px;
         text-align: center;
     }
+}
 
-    .cards-wrapper {
-        gap: 25px;
-    }
-    
-    .logo img { max-width: 130px; }
+.cnh {
+    width: 180px;
+    margin-bottom: 15px;
 }
